@@ -1,3 +1,5 @@
+import asyncio
+from abc import ABC, abstractmethod
 
 # Definicion de variables
 nombre_finca = "Mundo Verde"
@@ -6,8 +8,6 @@ humedad = 60        # Porcentaje
 cultivo_activo = True
 
 # Interfaces
-from abc import ABC, abstractmethod
-
 class ICultivo(ABC):
     @abstractmethod
     def mostrar_informacion(self):
@@ -33,7 +33,7 @@ class Cultivo(ICultivo):
         print(f"Plagas detectadas: {self.plagas_detectadas}")
         print(f"Superficie: {self.superficie} ha\n")
 
-# Lista de cultivos (solo objetos Cultivo)
+# Lista de cultivos 
 cultivos = [
     Cultivo("Tomate", "Hortaliza", "2023-03-01", "Crecimiento", True, False, 2.5),
     Cultivo("Lechuga", "Hortaliza", "2023-03-15", "Cosecha", False, True, 1.0),
@@ -52,7 +52,6 @@ def mostrar_cultivos(lista):
     for cultivo in lista:
         cultivo.mostrar_informacion()
 
-# Spread-like con diccionarios
 nuevo_cultivo_dict = {
     "nombre": "Pepino",
     "tipo": "Hortaliza",
@@ -63,6 +62,28 @@ nuevo_cultivo_dict = {
     "superficie": 1.8
 }
 nuevo_cultivo = Cultivo(**nuevo_cultivo_dict)
+
+nuevo_cultivo2_dict ={
+    "nombre": "Berenjena",
+    "tipo": "Hortaliza",
+    "fecha_siembra": "2023-05-10",
+    "estado": "Crecimiento",
+    "riego_necesario": True,
+    "plagas_detectadas": False,
+    "superficie": 1.5
+}
+nuevo_cultivo2 = Cultivo(**nuevo_cultivo2_dict)
+
+nuevo_cultivo3_dict = {
+    "nombre": "Cebolla",
+    "tipo": "Hortaliza",
+    "fecha_siembra": "2023-05-20",
+    "estado": "Crecimiento",
+    "riego_necesario": True,
+    "plagas_detectadas": False,
+    "superficie": 1.0
+}
+nuevo_cultivo3 = Cultivo(**nuevo_cultivo3_dict)
 
 # Función con *args
 def registrar_cultivos(*nuevos):
@@ -75,7 +96,6 @@ def procesar_cultivos(lista, callback):
         callback(cultivo)
 
 # Simulación de Promise con async
-import asyncio
 
 async def guardar_cultivo(cultivo):
     await asyncio.sleep(2)
@@ -91,7 +111,8 @@ async def registrar_confirmar(cultivo):
 if __name__ == "__main__":
     # Agregar nuevo cultivo
     agregar_cultivo(cultivos, nuevo_cultivo)
-
+    agregar_cultivo(cultivos, nuevo_cultivo2)
+    agregar_cultivo(cultivos, nuevo_cultivo3)
     # Mostrar cultivos
     mostrar_cultivos(cultivos)
 
