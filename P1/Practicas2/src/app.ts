@@ -109,7 +109,7 @@ function eliminar(id:number):void{
         console.log('No se encontro el estudiante');
     }
 }
-// console.log(estudiantes);
-// console.log('Eliminando estudiante con id 2');
-// eliminar(2);
-// console.log(estudiantes);  
+console.log(estudiantes);
+console.log('Eliminando estudiante con id 2');
+eliminar(2);
+console.log(estudiantes);  
