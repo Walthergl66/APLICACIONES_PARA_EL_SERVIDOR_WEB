@@ -1,21 +1,36 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+// import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+// import { View } from "./view";
+// @Entity()
+
+// export class user {
+//     @PrimaryGeneratedColumn()
+//   id!: number;
+//     @Column()
+//   name!: string;
+//     @Column()
+//   email!: string;
+//     @Column()
+//   password!: string;
+//    @OneToMany( ()=> View, (view: View) => view.user)
+//    views!: View[];
+// }	
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { View } from "./view";
 
 @Entity()
-
-export class user {
-    @PrimaryGeneratedColumn()
+export class User {
+  @PrimaryGeneratedColumn()
   id!: number;
-    @Column()
+
+  @Column()
   name!: string;
-    @Column()
+
+  @Column()
   email!: string;
-    @Column()
+
+  @Column()
   password!: string;
 
-  // constructor(id: number, name: string, email: string, password: string) {
-  //   this.id = id;
-  //   this.name = name;
-  //   this.email = email;
-  //   this.password = password;
-  // }
-}	
+  @OneToMany(() => View, (view: View) => view.users)
+  views!: View[];
+}

@@ -1,6 +1,7 @@
-import {user} from "./models/user";
+import {User} from "./models/user";
 import 'reflect-metadata';
-import { DataSource } from "typeorm";
+import { DataSource } from 'typeorm';
+import { View } from "./models/view";
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -11,7 +12,7 @@ export const AppDataSource = new DataSource({
     database: "practica", 
     synchronize: true,
     logging: false,
-    entities: [user],
+    entities: [User, View],
     subscribers: [],
     migrations: [],
 });
