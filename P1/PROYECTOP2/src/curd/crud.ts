@@ -1,5 +1,5 @@
-import { AppDataSource } from "./data-source";
-import { Cultivo } from "./models/cultivos";
+import { AppDataSource } from "../data-source";
+import { Cultivo } from "../models/cultivos";
 
 export const insertCultivo = async (nombre: string, tipo: string, fechaSiembra: Date, fechaCosecha: Date) => {
     const cultivo1 = new Cultivo();

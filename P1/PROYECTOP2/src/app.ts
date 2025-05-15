@@ -1,4 +1,4 @@
-import {insertCultivo} from './crud'
+import {insertCultivo} from './curd/crud'
 import { iniciar } from './database'
 
 async function main() {
