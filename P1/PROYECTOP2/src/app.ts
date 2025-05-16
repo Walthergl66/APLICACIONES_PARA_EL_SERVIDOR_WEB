@@ -36,16 +36,16 @@ async function mainUsuario() {
 
 async function mainCampo() {
     await iniciar()
-    const campo = await InsertCampo('Campo 1', 'Maiz', 'invernadero');
+    const campo = await InsertCampo('Zona 1', 'Maiz', 'invernadero');
     console.log("Campo agregado correctamente ", campo);
     const campos = await InfoCampo();
     console.log("Lista de campos", campos);
     const campoById = await InfoCampoById(campo.id);
     console.log("Campo ", campoById);
-    const updatedCampo = await UpdateCampo(campo.id, 'Campo 1 actualizado', 'Maiz', 'invernadero');
-    console.log("Campo actualizado", updatedCampo);
-    const deletedCampo = await DeleteCampo(campo.id);
-    console.log("Campo eliminado correctamente", deletedCampo);
+    // const updatedCampo = await UpdateCampo(campo.id, 'Zona 1 actualizado', 'Maiz', 'invernadero');
+    // console.log("Campo actualizado", updatedCampo);
+    // const deletedCampo = await DeleteCampo(campo.id);
+    // console.log("Campo eliminado correctamente", deletedCampo);
 }
 
 async function mainRiego() {
@@ -77,4 +77,6 @@ async function mainSensor() {
 }
 //mainCultivo()
 // mainUsuario()
-mainCampo()
+// mainCampo()
+// mainRiego()
+mainSensor()

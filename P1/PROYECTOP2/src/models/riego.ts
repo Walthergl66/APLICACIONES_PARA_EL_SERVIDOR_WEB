@@ -12,20 +12,20 @@ export class Riego {
   @Column()
   fecha!: Date;
 
-  @Column()
-  duracionMinutos!: number;
+//   @Column()
+//   duracionMinutos!: number;
 
-  @Column()
-  volumenLitros!: number;
+//   @Column()
+//   volumenLitros!: number;
 
-  @Column()
-  activadoAutomaticamente!: boolean;
+//   @Column()
+//   activadoAutomaticamente!: boolean;
 
   @ManyToOne(() => ZonaCultivo, zona => zona.riegos)
   @JoinColumn({ name: 'zonaCultivoId' })
   zonaCultivo!: ZonaCultivo;
 
-  @Column()
-  zonaCultivoId!: number;
+//   @Column()
+//   zonaCultivoId!: number;
 }
 

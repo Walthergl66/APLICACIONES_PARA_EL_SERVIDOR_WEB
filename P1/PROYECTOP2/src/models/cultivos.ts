@@ -47,8 +47,8 @@ export class Sensor {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column()
-  nombre!: string;
+  // @Column()
+  // nombre!: string;
 
   @Column()
   tipo!: string;
@@ -62,32 +62,32 @@ export class Sensor {
   @Column()
   estado! : 'activo' | 'inactivo' | 'mantenimiento';
 
-  @Column()
-  latitud!: number;
+  // @Column()
+  // latitud!: number;
 
-  @Column()
-  longitud!: number;
+  // @Column()
+  // longitud!: number;
 
-  @Column()
-  altura?: number;
+  // @Column()
+  // altura?: number;
 
   @Column()
   zonaCultivo!: 'norte' | 'sur' | 'este' | 'oeste' | 'centro';
 
-  @Column()
-  frecuenciaLectura!: number;
+  // @Column()
+  // frecuenciaLectura!: number;
 
-  @Column()
-  ultimaLectura!: number;
+  // @Column()
+  // ultimaLectura!: number;
 
   @Column()
   fechaUltimaLectura!: Date;
 
-  @Column()
-  rangoMin!: number;
+  // @Column()
+  // rangoMin!: number;
 
-  @Column()
-  rangoMax!: number;
+  // @Column()
+  // rangoMax!: number;
 
   @OneToMany(() => LecturaSensor, lectura => lectura.sensor, {
     cascade: true
