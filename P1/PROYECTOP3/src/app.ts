@@ -4,6 +4,9 @@ import express from "express";
 import cultivoRoutes from "./interface/routes/cultivo.routes";
 import { iniciar } from "./interface/database";
 import usuarioRoutes from "./interface/routes/usuario.routes";
+import zonaCultivoRoutes from "./interface/routes/ZonaCultivo.routes";
+import riegoRoutes from "./interface/routes/Riego.routes";
+import sensorRoutes from "./interface/routes/sensor.routes";
 
 // Iniciar base de datos
 (async () => {
@@ -22,5 +25,7 @@ app.use(express.json());
 
 app.use("/api/cultivos", cultivoRoutes);
 app.use("/api/usuarios", usuarioRoutes);
-
+app.use("/api/zona", zonaCultivoRoutes);
+app.use("/api/riegos", riegoRoutes);
+app.use("/api/sensores", sensorRoutes);
 app.listen(3000, () => {});

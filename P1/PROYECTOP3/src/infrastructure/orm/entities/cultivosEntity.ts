@@ -2,7 +2,7 @@ import {Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 
-@Entity()
+@Entity("cultivos")
 export class CultivoEntity {
   @PrimaryGeneratedColumn()
   id!: number;
