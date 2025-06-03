@@ -1,0 +1,69 @@
+# ultivoManager - API REST con Arquitectura N-Capas
+
+Este proyecto es una API REST para la gestión de cultivos agrícolas, sensores, zonas de cultivo, riegos y usuarios. Está construido en Node.js utilizando TypeScript, Express y TypeORM, siguiendo la **arquitectura en N capas** (Dominio, Aplicación, Infraestructura e Interfaces).
+
+---
+
+## Características
+
+- CRUD para entidades: `Cultivo`, `Usuario`, `ZonaCultivo`, `Sensor`, `Riego`.
+- Arquitectura escalable y desacoplada.
+- Conexión con base de datos relacional usando ORM flexible (TypeORM).
+- Rutas RESTful.
+- Separación entre entidades de dominio y entidades de persistencia.
+
+---
+
+## Tecnologías y Dependencias
+
+| Tecnología     
+| Node.js        
+| TypeScript     
+| Express        
+| TypeORM        
+| PostgreSQL     
+| ts-node-dev    
+
+### Instalación de dependencias
+
+```bash
+npm install
+
+ APLICACION DE TYPORM 
+ npm install typeorm --save
+
+ INSTALACION DE PG
+ npm install typeorm reflect-metadata pg
+
+ Aplicacion DE EXPRESS
+npm install express
+npm install @types/express --save-dev
+
+INSTALACION DE CORS
+npm install cors
+npm install --save-dev @types/cors
+
+
+Cómo iniciar el proyecto
+bash
+npm run dev
+
+
+
+## Manual de Usuario (API REST)
+Cultivos
+
+GET /api/cultivos → Obtener todos los cultivos.
+GET /api/cultivos/:id → Obtener un cultivo por ID.
+POST /api/cultivos → Crear un nuevo cultivo.
+
+Ejemplo JSON para POST:
+json
+Copiar
+Editar
+{
+  "nombre": "Tomate",
+  "tipoCultivo": "Frutal",
+  "zonaCultivo": "Sur",
+  "fechaSiembra": "2024-10-01"
+}

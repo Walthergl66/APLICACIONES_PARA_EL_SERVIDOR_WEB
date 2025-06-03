@@ -1,24 +1,24 @@
-import {CultivoEntity} from '../infrastructure/orm/entities/cultivosEntity';
-import { UsuarioEntity } from '../infrastructure/orm/entities/UsuarioEntity';
-import { RiegoEntity } from '../infrastructure/orm/entities/RiegoEntity';
-import { SensorEntity } from '../infrastructure/orm/entities/SensorEntity';
-import { ZonaCultivoEntity } from '../infrastructure/orm/entities/ZonaCultivoEntity';
-import 'reflect-metadata';
-import { DataSource } from 'typeorm';
-// import { View } from "./models/view";
+import { DataSource } from "typeorm";
+import * as dotenv from "dotenv";
+import { CultivoEntity } from "../infrastructure/orm/entities/cultivosEntity"; 
+import { RiegoEntity } from "../infrastructure/orm/entities/RiegoEntity";
+import { UsuarioEntity } from "../infrastructure/orm/entities/UsuarioEntity";
+import { ZonaCultivoEntity } from "../infrastructure/orm/entities/ZonaCultivoEntity";
+import { SensorEntity } from "../infrastructure/orm/entities/SensorEntity";
+
+dotenv.config();
 
 export const AppDataSource = new DataSource({
-    type: "postgres",
-    host: "localhost",
-    port: 5432,
-    username: "postgres",
-    password: "Hola",   
-    database: "cultivodb", 
-    synchronize: true,
-    logging: true,
-    entities: [CultivoEntity, UsuarioEntity, RiegoEntity, SensorEntity, ZonaCultivoEntity],
-    subscribers: [],
-    migrations: [],
+  type: "postgres",
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT || "5432"),
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  entities: [CultivoEntity,
+    RiegoEntity,
+    UsuarioEntity,
+    ZonaCultivoEntity,
+    SensorEntity],
+  synchronize: true, // Solo en desarrollo
 });
-
-
