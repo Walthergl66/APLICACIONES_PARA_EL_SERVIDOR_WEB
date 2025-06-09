@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "titulo": "Capital de Francia",
+    "pregunta": "¿Cuál es la capital de Francia?",
+    "respuesta": "París",
+    "categorias": [1],
+    "usuarioId": 1,
+    "fechaCreacion": "2024-06-01T00:00:00Z"
+  }
+]
