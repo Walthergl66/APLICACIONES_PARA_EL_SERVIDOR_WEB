@@ -17,4 +17,13 @@ export class Ciudadano {
   @Field (() =>String)
   nombre: String;
 
+  @Column( )
+  @Field (() =>String)
+  email: String;
+
+  @Column( )
+  @Field (() =>String)
+  password: String;
+
+
 }

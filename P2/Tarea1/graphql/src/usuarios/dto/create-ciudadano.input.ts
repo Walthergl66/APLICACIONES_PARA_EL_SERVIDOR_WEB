@@ -13,6 +13,13 @@ export class CreateCiudadanoInput {
   @IsString()
   nombre: string;
 
+  @Field (() =>String)
+  @IsString()
+  email: string;
+
+  @Field (() =>String)
+  @IsString()
+  password:string;
 
 
 }

@@ -6,6 +6,8 @@ type Ciudadano {
   id: ID!
   cedula: String!
   nombre: String!
+  email: String!
+  password: String!
 }
 
 type Cultivos {
@@ -52,11 +54,15 @@ type Mutation {
 input CreateCiudadanoInput {
   cedula: String!
   nombre: String!
+  email: String!
+  password: String!
 }
 
 input UpdateCiudadanoInput {
   cedula: String
   nombre: String
+  email: String
+  password: String
   id: ID!
 }
 
