@@ -1,0 +1,93 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Ciudadano {
+  id: ID!
+  cedula: String!
+  nombre: String!
+}
+
+type Cultivos {
+  id: ID!
+  nombre: String!
+  tipoCultivo: String!
+  zonaCultivo: String!
+  fechaSiembra: DateTime!
+  fechaCosecha: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type ZonaCultivo {
+  id: ID!
+  nombre: String!
+  tipoSuelo: String!
+  cultivoActual: String!
+}
+
+type Query {
+  ciudadanos: [Ciudadano!]!
+  ciudadano(id: String!): Ciudadano!
+  cultivos: [Cultivos!]!
+  cultivo(id: Int!): Cultivos!
+  zonaCultivo(id: String!): ZonaCultivo!
+}
+
+type Mutation {
+  createCiudadano(createCiudadanoInput: CreateCiudadanoInput!): Ciudadano!
+  updateCiudadano(updateCiudadanoInput: UpdateCiudadanoInput!): Ciudadano!
+  removeCiudadano(id: String!): Ciudadano!
+  createCultivo(createCultivoInput: CreateCultivoInput!): Cultivos!
+  updateCultivo(updateCultivoInput: UpdateCultivoInput!): Cultivos!
+  removeCultivo(id: Int!): Cultivos!
+  createZonaCultivo(createZonaCultivoInput: CreateZonaCultivoInput!): ZonaCultivo!
+  updateZonaCultivo(updateZonaCultivoInput: UpdateZonaCultivoInput!): ZonaCultivo!
+  removeZonaCultivo(id: String!): ZonaCultivo!
+}
+
+input CreateCiudadanoInput {
+  cedula: String!
+  nombre: String!
+}
+
+input UpdateCiudadanoInput {
+  cedula: String
+  nombre: String
+  id: ID!
+}
+
+input CreateCultivoInput {
+  nombre: String!
+  tipoCultivo: String!
+  zonaCultivo: String!
+  fechaSiembra: DateTime!
+  fechaCosecha: DateTime!
+}
+
+input UpdateCultivoInput {
+  nombre: String
+  tipoCultivo: String
+  zonaCultivo: String
+  fechaSiembra: DateTime
+  fechaCosecha: DateTime
+  id: ID!
+}
+
+input CreateZonaCultivoInput {
+  nombre: String!
+  ubicacion: String!
+  tipoSuelo: String!
+  cultivoActual: String!
+}
+
+input UpdateZonaCultivoInput {
+  nombre: String
+  ubicacion: String
+  tipoSuelo: String
+  cultivoActual: String
+  id: ID!
+}
