@@ -11,18 +11,18 @@ export class CreateCultivoInput {
 
   @Field (() =>String)
   @IsString()
-  tipoCultivo!: string;
+  tipoCultivo: string;
 
   @Field (() =>String)
   @IsString()
-  zonaCultivo!: string;
+  zonaCultivo: string;
 
   @Field (() =>Date)
   @IsDate()
-  fechaSiembra!: Date;
+  fechaSiembra: Date;
 
   @Field (() =>Date)
   @IsDate()
-  fechaCosecha!: Date;
+  fechaCosecha: Date;
 
 }

@@ -23,10 +23,10 @@ export class Cultivos {
 
   @Column()
   @Field (() =>Date)
-  fechaSiembra!: Date;
+  fechaSiembra: Date;
 
   @Column()
   @Field (() =>Date)
-  fechaCosecha!: Date;
+  fechaCosecha: Date;
 
 }

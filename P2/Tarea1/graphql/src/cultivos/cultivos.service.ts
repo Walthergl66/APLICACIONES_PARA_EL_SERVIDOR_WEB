@@ -14,7 +14,12 @@ export class CultivosService {
   ){}
 
   async create(createCultivoInput: CreateCultivoInput): Promise<Cultivos> {
-    const create = this.cultivosRepository.create(createCultivoInput);
+    const create = this.cultivosRepository.create({
+    ...createCultivoInput,
+    fechaSiembra: new Date(createCultivoInput.fechaSiembra),  // Convertir a Date
+    fechaCosecha: new Date(createCultivoInput.fechaCosecha),  // Convertir a Date
+    });
+
     return await this.cultivosRepository.save(create);
   }
 
