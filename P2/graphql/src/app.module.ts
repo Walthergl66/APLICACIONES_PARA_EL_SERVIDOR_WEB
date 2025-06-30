@@ -14,10 +14,10 @@ import { ZonaCultivoModule } from './zona-cultivo/zona-cultivo.module';
   imports: [ 
     ConfigModule.forRoot(), 
     TypeOrmModule.forRoot({
-      type: "sqlite",               // Cambiar de "postgres" a "sqlite"
-      database: join(__dirname, 'db.sqlite'), // Especificar el archivo de la base de datos SQLite
+      type: "sqlite",              
+      database: join(__dirname, 'db.sqlite'), 
       autoLoadEntities: true,
-      synchronize: true,            // Sincroniza las entidades con la base de datos
+      synchronize: true,            
     }), 
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
