@@ -6,6 +6,8 @@ import { CultivoService } from './cultivo/cultivo.service';
 import { UserModule } from './user/user.module';
 import { UserService } from './user/user.service';
 import { ZonacultivoModule } from './zonacultivo/zonacultivo.module';
+import { User } from './user/entities/user.entity';
+import { ZonaCultivo } from './zonacultivo/entities/zonacultivo.entity';
 
 @Module({
   imports: [
@@ -13,7 +15,7 @@ import { ZonacultivoModule } from './zonacultivo/zonacultivo.module';
     , TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'cultivos.db',
-      entities: [Cultivos],
+      entities: [Cultivos, User, ZonaCultivo],
       synchronize: true, // solo desarrollo
     }),
     TypeOrmModule.forFeature([Cultivos]),
